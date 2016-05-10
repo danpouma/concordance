@@ -59,6 +59,20 @@ public class HashElement
     @Override
     public String toString()
     {
-        return "HashElement{" + "word=" + word + ", lineNumbers=" + lineNumbers.size() + '}';
+        // Initialize an empty string to store lines
+        String lines = "";
+        
+        // Iterate through each node in linked list
+        for (LinkedListNode line : lineNumbers)
+        {
+            // Append line number to the string
+            lines += line.toString() + ", ";
+        }
+        
+        // Remove the trailing comma and whitespace
+        lines = lines.substring(0, lines.length()-2);
+      
+        // Return the line numbers
+        return lines;
     }
 }

@@ -28,4 +28,12 @@ public class LinkedListNode
         // Store the next pointer
         this.next = next;
     }
+
+    @Override
+    public String toString()
+    {
+        return lineNumber + "";
+    }
+    
+    
 }
