@@ -54,13 +54,16 @@ public class Main
                     // If word is already is the hash...
                     if (table.containsKey(word))
                     {
-                        
+                        // Add line number to the LinkedList
+                        table.get(word).addNode(new LinkedListNode(lineNumber));
                     }
                     // If word is not in the hash...
                     else
                     {
                         // Create hash element that will store word && line #'s
                         HashElement lines = new HashElement(word);
+                        
+                        lines.addNode(new LinkedListNode(lineNumber)); //, null));
                         
                         // Put key->word and value->lines into table
                         table.put(word, lines);
@@ -75,14 +78,12 @@ public class Main
             fileStream.close();
             dataStream.close();
         }
+        // There was an error during the "try" statement
         catch (Exception e)
         {
+            // Output an error message to console
             System.out.println("Error");
         }
-        
-        // Output values from table via it's toString() method
-        System.out.println(table.values());
-        
     }
     
     public static String canonicalFunction(String word)
